@@ -1,5 +1,6 @@
 package com.start.deliveryorder_20220528.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,14 @@ class PizzaStoreListFragment: Fragment() {
 
         mPizzStoreAdapter = PizzaStoreAdapter(requireContext(),R.layout.store_list_item, mPizzaStoreList)
         binding.pizzaStoreListView.adapter = mPizzStoreAdapter
+
+        binding.pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+
+            val clickedStore = mPizzaStoreList[position]
+            val myIntent = Intent(requireContext(),??)
+            myIntent.putExtra("store",clickedStore)
+            startActivity(myIntent)
+        }
 
     }
 }
