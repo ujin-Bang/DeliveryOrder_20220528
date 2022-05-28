@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         mvpa = MainViewPagerAdapter(supportFragmentManager)
         binding.mainViewPager.adapter = mvpa
+        binding.mainTabLayout.setupWithViewPager(binding.mainViewPager)
 
     }
 }
