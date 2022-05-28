@@ -7,18 +7,19 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.start.deliveryorder_20220528.R
+import com.start.deliveryorder_20220528.databinding.FragmentMyProfilBinding
 import com.start.deliveryorder_20220528.databinding.FragmentPizzaStoreListBinding
 
-class PizzaStoreListFragment: Fragment() {
+class MyProfileFragment: Fragment() {
 
-    lateinit var binding: FragmentPizzaStoreListBinding
+    lateinit var binding: FragmentMyProfilBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pizza_store_list, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_profil, container, false)
         return binding.root
     }
 
