@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.start.deliveryorder_20220528.R
+import com.start.deliveryorder_20220528.ViewStoreDetailActivity
 import com.start.deliveryorder_20220528.adapters.PizzaStoreAdapter
 import com.start.deliveryorder_20220528.databinding.FragmentPizzaStoreListBinding
 import com.start.deliveryorder_20220528.datas.StoreData
@@ -43,7 +44,7 @@ class PizzaStoreListFragment: Fragment() {
         binding.pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
 
             val clickedStore = mPizzaStoreList[position]
-            val myIntent = Intent(requireContext(),??)
+            val myIntent = Intent(requireContext(),ViewStoreDetailActivity::class.java)
             myIntent.putExtra("store",clickedStore)
             startActivity(myIntent)
         }
