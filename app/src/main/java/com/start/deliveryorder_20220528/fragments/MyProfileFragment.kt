@@ -1,5 +1,6 @@
 package com.start.deliveryorder_20220528.fragments
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,6 +34,18 @@ class MyProfileFragment: Fragment() {
         binding.btnNicknameChange.setOnClickListener {
             val myIntent = Intent(requireContext(),EditMyInfoActivity::class.java)
             startActivityForResult(myIntent,REQ_CODE_NIKCKNAME)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if( requestCode == REQ_CODE_NIKCKNAME ){
+
+            if( resultCode == RESULT_OK) {
+                val nNickname = data!!.getStringExtra("newNickname")
+                binding.txtNickname.text = nNickname
+            }
+
         }
     }
 }
