@@ -9,6 +9,22 @@
         android:padding="20dp"
         tools:context=".EditMyInfoActivity">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임"/>
+
+        <EditText
+            android:id="@+id/edtNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="변경할 닉네임 입력"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="닉네임 변경완료"/>
 
     </LinearLayout>
 </layout>
