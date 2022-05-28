@@ -4,7 +4,7 @@
     package="com.start.deliveryorder_20220528">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +17,9 @@
         android:theme="@style/Theme.DeliveryOrder_20220528"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".EditMyInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".ViewStoreDetailActivity"
             android:exported="false" />
