@@ -1,5 +1,6 @@
 package com.start.deliveryorder_20220528.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.start.deliveryorder_20220528.R
+import com.start.deliveryorder_20220528.ViewChickenStoreDetailActivity
 import com.start.deliveryorder_20220528.adapters.ChickenStoreAdapter
 import com.start.deliveryorder_20220528.databinding.FragmentChickenStoreListBinding
 import com.start.deliveryorder_20220528.datas.ChickenStoreData
@@ -38,6 +40,14 @@ class ChickenStoreListFragment: Fragment() {
 
         mChickenStoreAdapter = ChickenStoreAdapter(requireContext(), R.layout.chicken_store_list_item,mChickenStoreList)
         binding.chickenListView.adapter = mChickenStoreAdapter
+
+        binding.chickenListView.setOnItemClickListener { parent, view, position, id ->
+            val clickedChickenStore = mChickenStoreList[position]
+
+            val myIntent = Intent(requireContext(), ViewChickenStoreDetailActivity::class.java)
+            myIntent.putExtra("storeData", clickedChickenStore)
+            startActivity(myIntent)
+        }
 
     }
 }
