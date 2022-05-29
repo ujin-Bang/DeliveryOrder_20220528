@@ -71,6 +71,12 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnMove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="홈페이지로 이동"/>
+
 
     </LinearLayout>
 </layout>

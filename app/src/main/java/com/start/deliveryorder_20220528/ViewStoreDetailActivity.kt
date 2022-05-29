@@ -50,8 +50,13 @@ class ViewStoreDetailActivity : AppCompatActivity() {
                 .setPermissionListener(permissionListener)
                 .setPermissions(Manifest.permission.CALL_PHONE)
                 .check()
-
             
+        }
+
+        binding.btnMove.setOnClickListener {
+            val myUri = Uri.parse("${mStoreData.homePageURL}")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
         }
 
     }
@@ -63,5 +68,6 @@ class ViewStoreDetailActivity : AppCompatActivity() {
         Glide.with(this).load(mStoreData.logoURL).into(binding.imgLogo)
         binding.txtStoreName.text = mStoreData.name
         binding.txtPhoneNum.text = mStoreData.phoneNum
+        binding.btnMove.text = "==>${mStoreData.name}홈페이지로 바로가기<=="
     }
 }
