@@ -52,12 +52,19 @@ class ViewChickenStoreDetailActivity : AppCompatActivity() {
 
         }
 
+        binding.btnMove.setOnClickListener {
+            val myUri = Uri.parse("${mChickenStoreData.homePageURL}")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
+
     }
 
     fun setValues(){
         mChickenStoreData = intent.getSerializableExtra("storeData") as ChickenStoreData
         binding.txtStoreName.text = mChickenStoreData.storeName
         binding.txtPhoneNum.text = mChickenStoreData.phoneNum
+        binding.btnMove.text = "${mChickenStoreData.storeName}홈페이지 바로가기 Move~"
         Glide.with(this).load(mChickenStoreData.logoURL).into(binding.imgLogo)
 
     }
