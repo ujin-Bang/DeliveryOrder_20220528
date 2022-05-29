@@ -6,11 +6,6 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="여기는 치킨리스트 페이지입니다"/>
-
         <ListView
             android:id="@+id/chickenListView"
             android:layout_width="match_parent"
